@@ -2333,9 +2333,18 @@ describe('IamIdentityV1_integration', () => {
   }
 
   async function updateAccountSettingsTemplate() {
+    const accountSettingsUserDomainRestriction = {
+      realm_id: 'IBMid',
+      invitation_email_allow_patterns: [ '*.*@ibm.com' ],
+      restrict_invitation: false,
+    };
+
     const settings = {
       mfa: "LEVEL1",
       system_access_token_expiration_in_seconds: "3000",
+      restrict_user_list_visibility: true,
+      restrict_user_domains: [accountSettingsUserDomainRestriction],
+      restrict_user_domains_account_override: true
     }
     const params = {
       accountId: enterpriseAccountId,

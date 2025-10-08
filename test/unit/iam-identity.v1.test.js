@@ -6837,24 +6837,34 @@ describe('IamIdentityV1', () => {
     describe('positive tests', () => {
       // Request models needed by this operation.
 
+      // AccountSettingsUserDomainRestriction
+      const accountSettingsUserDomainRestrictionModel = {
+        realm_id: 'IBMid',
+        invitation_email_allow_patterns: [ '*.*@ibm.com' ],
+        restrict_invitation: false,
+      };
+
       // UserMfa
       const userMfaModel = {
         iam_id: 'testString',
         mfa: 'NONE',
       };
 
-      // AccountSettingsComponent
-      const accountSettingsComponentModel = {
+      // TemplateAccountSettings
+      const templateAccountSettingsModel = {
         restrict_create_service_id: 'NOT_SET',
         restrict_create_platform_apikey: 'NOT_SET',
+        restrict_user_list_visibility: 'NOT_RESTRICTED',
+        restrict_user_domains: [accountSettingsUserDomainRestrictionModel],
         allowed_ip_addresses: 'testString',
         mfa: 'NONE',
-        user_mfa: [userMfaModel],
         session_expiration_in_seconds: '86400',
         session_invalidation_in_seconds: '7200',
         max_sessions_per_identity: 'testString',
         system_access_token_expiration_in_seconds: '3600',
         system_refresh_token_expiration_in_seconds: '259200',
+        user_mfa: [userMfaModel],
+        restrict_user_domains_account_override: true,
       };
 
       function __createAccountSettingsTemplateTest() {
@@ -6862,7 +6872,7 @@ describe('IamIdentityV1', () => {
         const accountId = 'testString';
         const name = 'testString';
         const description = 'testString';
-        const accountSettings = accountSettingsComponentModel;
+        const accountSettings = templateAccountSettingsModel;
         const createAccountSettingsTemplateParams = {
           accountId,
           name,
@@ -7202,24 +7212,34 @@ describe('IamIdentityV1', () => {
     describe('positive tests', () => {
       // Request models needed by this operation.
 
+      // AccountSettingsUserDomainRestriction
+      const accountSettingsUserDomainRestrictionModel = {
+        realm_id: 'IBMid',
+        invitation_email_allow_patterns: [ '*.*@ibm.com' ],
+        restrict_invitation: false,
+      };
+
       // UserMfa
       const userMfaModel = {
         iam_id: 'testString',
         mfa: 'NONE',
       };
 
-      // AccountSettingsComponent
-      const accountSettingsComponentModel = {
+      // TemplateAccountSettings
+      const templateAccountSettingsModel = {
         restrict_create_service_id: 'NOT_SET',
         restrict_create_platform_apikey: 'NOT_SET',
+        restrict_user_list_visibility: 'NOT_RESTRICTED',
+        restrict_user_domains: [accountSettingsUserDomainRestrictionModel],
         allowed_ip_addresses: 'testString',
         mfa: 'NONE',
-        user_mfa: [userMfaModel],
         session_expiration_in_seconds: '86400',
         session_invalidation_in_seconds: '7200',
         max_sessions_per_identity: 'testString',
         system_access_token_expiration_in_seconds: '3600',
         system_refresh_token_expiration_in_seconds: '259200',
+        user_mfa: [userMfaModel],
+        restrict_user_domains_account_override: true,
       };
 
       function __createAccountSettingsTemplateVersionTest() {
@@ -7228,7 +7248,7 @@ describe('IamIdentityV1', () => {
         const accountId = 'testString';
         const name = 'testString';
         const description = 'testString';
-        const accountSettings = accountSettingsComponentModel;
+        const accountSettings = templateAccountSettingsModel;
         const createAccountSettingsTemplateVersionParams = {
           templateId,
           accountId,
@@ -7412,24 +7432,34 @@ describe('IamIdentityV1', () => {
     describe('positive tests', () => {
       // Request models needed by this operation.
 
+      // AccountSettingsUserDomainRestriction
+      const accountSettingsUserDomainRestrictionModel = {
+        realm_id: 'IBMid',
+        invitation_email_allow_patterns: [ '*.*@ibm.com' ],
+        restrict_invitation: false,
+      };
+
       // UserMfa
       const userMfaModel = {
         iam_id: 'testString',
         mfa: 'NONE',
       };
 
-      // AccountSettingsComponent
-      const accountSettingsComponentModel = {
+      // TemplateAccountSettings
+      const templateAccountSettingsModel = {
         restrict_create_service_id: 'NOT_SET',
         restrict_create_platform_apikey: 'NOT_SET',
+        restrict_user_list_visibility: 'NOT_RESTRICTED',
+        restrict_user_domains: [accountSettingsUserDomainRestrictionModel],
         allowed_ip_addresses: 'testString',
         mfa: 'NONE',
-        user_mfa: [userMfaModel],
         session_expiration_in_seconds: '86400',
         session_invalidation_in_seconds: '7200',
         max_sessions_per_identity: 'testString',
         system_access_token_expiration_in_seconds: '3600',
         system_refresh_token_expiration_in_seconds: '259200',
+        user_mfa: [userMfaModel],
+        restrict_user_domains_account_override: true,
       };
 
       function __updateAccountSettingsTemplateVersionTest() {
@@ -7440,7 +7470,7 @@ describe('IamIdentityV1', () => {
         const accountId = 'testString';
         const name = 'testString';
         const description = 'testString';
-        const accountSettings = accountSettingsComponentModel;
+        const accountSettings = templateAccountSettingsModel;
         const updateAccountSettingsTemplateVersionParams = {
           ifMatch,
           templateId,
